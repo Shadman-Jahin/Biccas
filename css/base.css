@@ -248,9 +248,10 @@
 /* * ======================================== */
 
 :root {
-    color-scheme: light;
+    color-scheme: light dark;
     --space: 0.25rem;
     --base-font-size: 10px;
+
 
     /* ! TYPOGRAPHY */
     --heading-color: light-dark(#191A15, #fff);
@@ -259,15 +260,44 @@
     --color-black: light-dark(#000, #fff);
     --color-white: #fff;
 
+
     /* ! COLOR PALETTE */
     --primary: #54BD95;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-gray-color: #0003;
+
+
+    /* ! NAVIGATION MENU */
+    --links-gap: 3rem 0rem;
+    --action-gap: 1.3rem;
+    --links-action-gap: 9rem 5rem;
+
+    --slider-padding-top: 10rem;
+    --slider-width: 35rem;
+    --slider-bg: light-dark(#fff, #2a2a2a);
+    --slider-close-btn-margin: 2rem;
+    --overlay-bg: #2c2c2c66;
+
+
+    /* ! THEME SELECTOR */
+    --os-mode-bg: var(--primary);
+    --light-mode-bg: hsl(28, 100%, 45%);
+    --dark-mode-bg: hsl(268, 100%, 60%);
+
+    /* --theme-bg: light-dark(#fff, hsl(157, 44%, 20%)); */
+    --theme-bg: light-dark(#fff, hsl(268, 100%, 20%));
+    --theme-icon-color: var(--heading-color);
+    --theme-active-icon-color: #fff;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background: light-dark(#fff, #000f08);
 }
 
 /* * ========================================== */
@@ -332,7 +362,7 @@ a {
     color: var(--para-color);
     font: normal 500 1.8rem/3rem "Inter", sans-serif;
     text-decoration: none;
-    transition: .3s;
+    transition: .3s ease;
     display: inline-block;
     min-width: 10rem;
     text-align: center;
@@ -452,6 +482,37 @@ ul.list>li::before {
     background: url("../images/svg/check-icon.svg");
 
 }
+
+/* * ===================================== */
+/* * CUSTOM TOOLTIP (BS5) */
+/* * ===================================== */
+
+
+.custom-tooltip {
+    font-size: 1.6rem;
+    font-weight: 700;
+    --bs-tooltip-bg: var(--primary, #54BD95);
+    --bs-tooltip-color: var(--color-white, #fff);
+}
+
+.custom-tooltip .tooltip-inner {
+    border-radius: 1rem;
+}
+
+.custom-tooltip .tooltip-arrow {
+    width: 2rem;
+    height: 2rem;
+    pointer-events: none;
+    translate: 0 20%;
+}
+
+.custom-tooltip .tooltip-arrow::before {
+    border-width: 1rem !important;
+    margin-bottom: 2.1rem;
+}
+
+
+
 
 /* * ===================================== */
 /* * LAYOUT */
