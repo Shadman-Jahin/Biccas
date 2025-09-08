@@ -12,6 +12,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <!-- LENIS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.8/dist/lenis.css">
+    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1 /dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- BOOTSTRAP 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -27,6 +33,31 @@
 </head>
 
 <body>
+    <!-- LOADER -->
+    <div class="loader">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- COOKIES -->
+    <div id="cookies">
+        <div class="offcanvas offcanvas-bottom" data-bs-backdrop="static" tabindex="-1" id="Id2"
+            aria-labelledby="staticBackdropLabel">
+            <div class="offcanvas-header">
+                <h3 class="offcanvas-title" id="staticBackdropLabel">
+                    COOKIES
+                </h3>
+                <a type="button" class="ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">&Cross;</a>
+            </div>
+            <div class="offcanvas-body">
+                <p>This website is developed by <span>SHADMAN JAHIN</span></p>
+                <button class="btn-large mt-05" data-bs-dismiss="offcanvas">UNDERSTOOD</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
     <header>
         <nav aria-label="Main Navigation" role="navigation">
             <div class="container">
@@ -526,8 +557,9 @@
         </div>
 
         <div class="container mt-25">
-            <p class="text-white">© 2025 <span class="dev">Developed by SHADMAN
-                    JAHIN</span></p>
+            <p class="text-white">© 2025
+                <span class="dev">Developed by SHADMAN JAHIN</span>
+            </p>
             <p class="text-white">Terms and Condtions &CenterDot; Privacy Policy</p>
         </div>
     </footer>

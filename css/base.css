@@ -295,6 +295,16 @@
     --theme-bg: light-dark(#fff, hsl(268, 100%, 20%));
     --theme-icon-color: var(--heading-color);
     --theme-active-icon-color: #fff;
+
+    /* ! LOADER */
+    --loader-bg: var(--body-bg);
+    --loader-color: light-dark(rgba(25, 26, 21, 0.5), rgba(255, 255, 255, .5));
+    --loader-color-active: light-dark(#191A15, #fff);
+
+    /* ! SCROLLBAR */
+    /* to adjust width go to app.js (loader) */
+    --scrollbar-width: 0rem;
+    --scrollbar-bg: var(--primary);
 }
 
 * {
@@ -551,19 +561,86 @@ ul.list>li::before {
 /* * ====================== */
 
 #cookies .offcanvas {
-    background: #000;
+    background: var(--slider-bg);
     --bs-offcanvas-height: max(30vh, 30rem);
+    background-image: radial-gradient(circle at 50% 100%,
+            rgba(82, 189, 170, 0.4) 0%,
+            rgba(82, 189, 170, 0.1) 15%,
+            rgba(82, 189, 170, 0.0) 70%,
+            transparent 100%);
+    padding: 0 1rem;
 }
 
 #cookies .offcanvas span {
-    color: #f70;
+    color: light-dark(rgb(0, 163, 95), #7f0);
     font-weight: 600;
+    font-size: 2rem;
     font-style: italic;
+    font-weight: 700;
     display: inline-block;
     width: 25rem;
 }
 
 #cookies .offcanvas a {
     font-size: 5rem;
-    color: #fff;
+    color: var(--heading-color);
+}
+
+/* * ======================================== */
+/* * LOADER */
+/* * ======================================== */
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--loader-bg);
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    transform: scale(2);
+}
+
+.bar {
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background-color: var(--loader-color);
+    border-radius: 10px;
+    animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+    height: 35px;
+    margin: 0 5px;
+    animation-delay: .25s;
+}
+
+.bar:nth-child(3) {
+    animation-delay: .5s;
+}
+
+@keyframes scale-up4 {
+    20% {
+        background-color: var(--loader-color-active);
+        transform: scaleY(1.5);
+    }
+
+    40% {
+        transform: scaleY(1);
+    }
+}
+
+/* * ========================================== */
+/* * CUSTOM SCROLLBAR */
+/* * ========================================== */
+
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-bg);
+    border-radius: 4rem;
 }

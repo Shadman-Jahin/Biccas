@@ -1,3 +1,40 @@
+// * ========================================
+// * LENIS INTIALIZATION
+// * ========================================
+
+const lenis = new Lenis({
+    duration: 1.5, // Duration of the smooth scroll animation in seconds
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing function
+    direction: 'vertical', // vertical, horizontal
+    gestureDirection: 'vertical', // vertical, horizontal, both
+    smoothWheel: true, // Enables smooth scrolling for mouse wheel
+    wheelMultiplier: 1.5, // Adjust scroll speed for mouse wheel
+    smoothTouch: false, // Disables smooth scrolling for touch devices (often better for mobile performance)
+    touchMultiplier: 2, // Adjust scroll speed for touch
+    infinite: false, // Enables infinite scroll
+    autoRaf: true, // Automatically calls lenis.raf(time) using requestAnimationFrame
+});
+
+
+// * =============
+// * LOADER
+// * =============
+
+window.addEventListener("load", () => {
+    const navEntries = performance.getEntriesByType("navigation");
+    const loadTime = navEntries.length
+        ? navEntries[0].loadEventEnd - navEntries[0].startTime
+        : performance.now();
+
+    const minimumTime = 1000; // 1s in ms
+    const remainingTime = Math.max(0, minimumTime - loadTime);
+
+    setTimeout(() => {
+        document.documentElement.style.setProperty("--scrollbar-width", ".5rem");
+        document.querySelector(".loader")?.remove();
+    }, remainingTime);
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // ! ====================================
@@ -35,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearlyBtn = document.getElementById('yearly');
     const pro = document.querySelector(".pro h2");
     const business = document.querySelector(".business h2");
-    console.log(pro, business);
 
     monthlyBtn.addEventListener('click', () => {
         toggle.classList.remove('yearly');
@@ -56,3 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// * ===========================
+// * BROWER COOKIES
+// * ===========================
+
+window.addEventListener("load", () => {
+    const offcanvasElement = document.querySelector("#cookies .offcanvas");
+    const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
+    setTimeout(() => {
+        bsOffcanvas.show();
+    }, 15000);
+})
