@@ -5,10 +5,11 @@
 header {
     position: fixed;
     inset: 0 0 auto;
+    z-index: 99;
 }
 
 nav {
-    backdrop-filter: blur(.5rem)
+    backdrop-filter: blur(1rem);
 }
 
 nav .container {
@@ -192,4 +193,439 @@ input#toggle-slider,
 
 :root:has(#dark-mode:checked) {
     color-scheme: dark;
+}
+
+/* * ====================================== */
+/* * HERO CONTENT */
+/* * ====================================== */
+
+#hero {
+    padding: 17rem 0 13rem;
+    overflow: hidden;
+    background-image: radial-gradient(circle at 0% 0%,
+            rgba(82, 189, 170, 0.4) 0%,
+            rgba(82, 189, 170, 0.1) 15%,
+            rgba(82, 189, 170, 0.0) 70%,
+            transparent 100%),
+        radial-gradient(circle at 100% 50%,
+            rgba(82, 189, 170, 0.4) 0%,
+            rgba(82, 189, 170, 0.1) 15%,
+            rgba(82, 189, 170, 0.0) 70%,
+            transparent 100%);
+}
+
+#hero .buttons {
+    display: flex;
+    gap: 4rem;
+}
+
+#hero .video-button {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#hero .logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+/* image ===================== */
+
+#hero .image {
+    position: relative;
+    width: 65rem;
+    height: 50rem;
+    pointer-events: none;
+}
+
+#hero .image img {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+    #hero .image {
+        position: static;
+        width: auto;
+        height: auto;
+        pointer-events: auto;
+    }
+
+    #hero .image img {
+        top: auto;
+        left: auto;
+        position: static;
+    }
+}
+
+/* * =============================== */
+/* * SUPPORT */
+/* * =============================== */
+
+#support {
+    padding: 6rem 0;
+}
+
+
+#support .ratings {
+    display: flex;
+    gap: 8rem;
+}
+
+/* ------------------------------- */
+/* CONTENT */
+
+#support .content .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+#support .content .item img {
+    background: var(--body-bg-off);
+    padding: 1.5rem;
+}
+
+
+/* * ===================================== */
+/* * FEATURES */
+/* * ===================================== */
+
+#feature {
+    padding: 12rem 0;
+    background-image: radial-gradient(circle at 0% 50%,
+            rgba(82, 189, 170, 0.4) 0%,
+            rgba(82, 189, 170, 0.1) 15%,
+            rgba(82, 189, 170, 0.0) 70%,
+            transparent 100%);
+}
+
+
+/* --------------------------------- */
+/* TITLE */
+
+#feature .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2.5rem 0;
+}
+
+#feature .title h2 {
+    width: min(33rem, 100%);
+}
+
+#feature .title p {
+    width: min(56rem, 100%);
+}
+
+@media screen and (max-width: 1200px) {
+    #feature .title {
+        flex-direction: column;
+    }
+}
+
+/* --------------------------------- */
+/* CONTENT */
+
+#feature .content {
+    display: flex;
+    gap: 6rem 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#feature .content .item {
+    width: min(100%, 34rem);
+}
+
+/* * ======================================= */
+/* * BENEFIT AND PLAN */
+/* * ======================================= */
+
+#benefit-plan {
+    padding: 12rem 0;
+    background-image: radial-gradient(circle at 100% 40%,
+            rgba(82, 189, 170, 0.4) 0%,
+            rgba(82, 189, 170, 0.1) 15%,
+            rgba(82, 189, 170, 0.0) 70%,
+            transparent 100%);
+}
+
+
+/* ---------------------------- */
+/* PLAN */
+
+#plan {
+    padding: 0 1rem;
+}
+
+#plan .title {
+    text-align: center;
+    width: min(100%, 52rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#plan .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+#plan .content .plan-item {
+    width: min(37.4rem, 100%);
+    text-align: center;
+    background: var(--body-bg-off);
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 .4rem .9rem 0 var(--shadow-color);
+}
+
+
+
+#plan .content .plan-item h2 {
+    position: relative;
+}
+
+#plan .content .plan-item h2>* {
+    position: absolute;
+    left: 40%;
+    translate: -40%;
+}
+
+#plan .content .plan-item .box {
+    border-radius: 1rem;
+    background: var(--body-bg);
+    padding: 2.7rem;
+}
+
+/* PRO PLAN */
+
+#plan .content .plan-item:nth-child(2) {
+    background: radial-gradient(circle at bottom, var(--primary-faded) 0 78%, var(--primary) 10% 100%);
+    translate: 0 -3rem;
+}
+
+#plan .content .plan-item:nth-child(2) .box {
+    background: var(--body-bg-off);
+}
+
+@media screen and (max-width: 1216px) {
+    #plan .content .plan-item:nth-child(2) {
+        translate: 0;
+    }
+}
+
+/* ! TOGGLE BUTTON */
+
+.toggle-container {
+    box-shadow: 0 .4rem .9rem 0 var(--shadow-color);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    background: var(--body-bg-off);
+    border-radius: 1.2rem;
+    overflow: hidden;
+    width: 30rem;
+    border: .7rem solid var(--body-bg-off);
+}
+
+.toggle-container .toggle-btn {
+    flex: 1;
+    padding: 1.2rem 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 500;
+    background: transparent;
+    color: var(--heading-color);
+    z-index: 1;
+    font-family: "Inter", sans-serif;
+}
+
+.toggle-container .glider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.toggle-container.yearly .glider {
+    transform: translateX(100%);
+}
+
+.toggle-container .toggle-btn.active {
+    color: white;
+}
+
+
+/* * ==================================== */
+/* * TESTIMONIAL */
+/* * ==================================== */
+
+#testimonial {
+    background: var(--body-bg-dark);
+    padding: 10rem 0;
+}
+
+#testimonial .avaters {
+    display: flex;
+    gap: 2rem;
+}
+
+/* --------------------------- */
+/* FORM */
+
+#testimonial form {
+    background: var(--form-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 6.5rem;
+    gap: 1rem;
+    width: min(100%, 60rem);
+    border-radius: 2rem;
+}
+
+#testimonial form h4,
+#testimonial form .image {
+    text-align: center;
+}
+
+#testimonial form input,
+#testimonial form textarea {
+    border: 0;
+    border-radius: 1rem;
+    background: var(--color-white);
+    resize: none;
+    padding: 2rem;
+    height: 5rem;
+    color: var(--para-color);
+    font: normal 500 1.5rem/normal "Inter", sans-serif;
+    outline: 0;
+}
+
+#testimonial form textarea {
+    height: 8rem;
+}
+
+#testimonial form input::placeholder,
+#testimonial form textarea::placeholder {
+    color: var(--para-color);
+    font: normal 500 1.5rem/normal "Inter", sans-serif;
+
+}
+
+
+#testimonial form button {
+    border: 0;
+    outline: 0;
+    border-radius: 1rem;
+}
+
+
+#testimonial form .trial {
+    color: var(--para-color);
+    align-self: flex-end;
+}
+
+/* * ==================================== */
+/* * FOOTER */
+/* * ==================================== */
+
+footer {
+    background: var(--body-bg-dark);
+    padding: 4rem 0;
+}
+
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: space-between;
+}
+
+footer .container:last-child {
+    gap: 0;
+}
+
+footer .dev {
+    color: #f07;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 700;
+}
+
+
+
+/* ----------------------- */
+/* LOGO */
+
+footer .logo h2 {
+    color: var(--primary);
+}
+
+footer .logo form {
+    display: flex;
+    justify-content: space-between;
+    width: min(41rem, 100%);
+    height: 6rem;
+    border-radius: 7rem;
+    border: .2rem solid var(--para-color);
+    padding: .7rem;
+}
+
+footer .logo form input {
+    flex-grow: 1;
+    border: 0;
+    outline: 0;
+    padding: 2rem;
+    color: var(--para-color);
+    font: normal 500 1.5rem/normal "Inter", sans-serif;
+    background: transparent;
+}
+
+footer .logo form input::placeholder {
+    color: var(--para-color);
+    font: normal 500 1.5rem/normal "Inter", sans-serif;
+}
+
+footer .logo form button {
+    border-radius: 50%;
+    width: fit-content;
+    aspect-ratio: 1;
+    padding: 0;
+}
+
+/* --------------------------------- */
+/* CONTENT */
+
+footer .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6rem;
+}
+
+footer .content>div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+footer .content a {
+    text-align: left;
 }

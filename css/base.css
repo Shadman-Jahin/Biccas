@@ -248,6 +248,7 @@
 /* * ======================================== */
 
 :root {
+    scroll-behavior: smooth;
     color-scheme: light dark;
     --space: 0.25rem;
     --base-font-size: 10px;
@@ -263,8 +264,14 @@
 
     /* ! COLOR PALETTE */
     --primary: #54BD95;
+    --primary-faded: #6BC2A1;
+    --white: #fff;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --shadow-gray-color: #0003;
+    --body-bg: light-dark(#f2f2f2, #000f08);
+    --body-bg-off: light-dark(#ffffff, #001c0f);
+    --body-bg-dark: light-dark(#161C28, hsl(201, 100%, 6%));
+    --form-bg: light-dark(#222938, hsl(201, 100%, 10%));
 
 
     /* ! NAVIGATION MENU */
@@ -274,7 +281,7 @@
 
     --slider-padding-top: 10rem;
     --slider-width: 35rem;
-    --slider-bg: light-dark(#fff, #2a2a2a);
+    --slider-bg: light-dark(#fff, #00331b);
     --slider-close-btn-margin: 2rem;
     --overlay-bg: #2c2c2c66;
 
@@ -297,7 +304,12 @@
 }
 
 body {
-    background: light-dark(#fff, #000f08);
+    background: var(--body-bg);
+}
+
+svg,
+img {
+    max-width: 100%;
 }
 
 /* * ========================================== */
@@ -344,6 +356,12 @@ h4 {
 h5 {
     color: var(--heading-color);
     font: normal 700 2.8rem/normal "Inter", sans-serif;
+}
+
+@media screen and (max-width: 1000px) {
+    h1 {
+        font: normal 700 6rem/normal "Inter", sans-serif;
+    }
 }
 
 /* ------------------------- */
@@ -465,6 +483,7 @@ ul.list>li {
     font: normal 500 1.8rem/3rem "Inter", sans-serif;
     text-indent: 5.2rem;
     position: relative;
+    text-align: left;
 }
 
 ul.list>li+li {
