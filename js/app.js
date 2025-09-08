@@ -18,7 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
+    tooltipTriggerList.forEach(el => {
+        el.addEventListener('shown.bs.tooltip', () => {
+            setTimeout(() => {
+                bootstrap.Tooltip.getInstance(el).hide();
+            }, 2000);
+        });
+    });
 
     // * ================================
     // * PLAN TOGGLE BUTTON
