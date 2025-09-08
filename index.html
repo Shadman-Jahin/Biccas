@@ -28,18 +28,19 @@
 
 <body>
     <header>
-        <nav>
+        <nav aria-label="Main Navigation" role="navigation">
             <div class="container">
-                <a href="#" class="logo">
+                <a href="#" class="logo" aria-label="Biccas homepage">
                     <h2>Biccas</h2>
                 </a>
 
                 <!--! THEME SELECTOR -->
-                <div class="theme-selector">
-                    <input type="radio" name="theme" id="os-mode" checked />
+                <div class="theme-selector" role="radiogroup" aria-label="Theme selection">
+                    <input type="radio" name="theme" id="os-mode" checked aria-checked="true" />
                     <label for="os-mode" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip"
-                        title="System Default" data-bs-placement="bottom">
-                        <svg width="24" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                        title="System Default" data-bs-placement="bottom" aria-label="System Default Theme">
+                        <svg width="24" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"
+                            role="img" aria-label="System Default Icon">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -50,10 +51,11 @@
                         </svg>
                     </label>
 
-                    <input type="radio" name="theme" id="light-mode" />
+                    <input type="radio" name="theme" id="light-mode" aria-checked="false" />
                     <label for="light-mode" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip"
-                        title="Light Mode" data-bs-placement="bottom"> <svg width="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" stroke="#000000">
+                        title="Light Mode" data-bs-placement="bottom" aria-label="Light Theme">
+                        <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            stroke="#000000" role="img" aria-label="Light Theme Icon">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -62,14 +64,11 @@
                                 <path d="M12 2V4" stroke="var(--theme-icon-color)" stroke-width="1.5"
                                     stroke-linecap="round"></path>
                                 <path d="M12 20V22" stroke="var(--theme-icon-color)" stroke-width="1.5"
-                                    stroke-linecap="round">
-                                </path>
+                                    stroke-linecap="round"></path>
                                 <path d="M4 12L2 12" stroke="var(--theme-icon-color)" stroke-width="1.5"
-                                    stroke-linecap="round">
-                                </path>
+                                    stroke-linecap="round"></path>
                                 <path d="M22 12L20 12" stroke="var(--theme-icon-color)" stroke-width="1.5"
-                                    stroke-linecap="round">
-                                </path>
+                                    stroke-linecap="round"></path>
                                 <path d="M19.7778 4.22266L17.5558 6.25424" stroke="var(--theme-icon-color)"
                                     stroke-width="1.5" stroke-linecap="round"></path>
                                 <path d="M4.22217 4.22266L6.44418 6.25424" stroke="var(--theme-icon-color)"
@@ -82,10 +81,11 @@
                         </svg>
                     </label>
 
-                    <input type="radio" name="theme" id="dark-mode" />
+                    <input type="radio" name="theme" id="dark-mode" aria-checked="false" />
                     <label for="dark-mode" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip"
-                        title="Dark Mode" data-bs-placement="bottom">
-                        <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        title="Dark Mode" data-bs-placement="bottom" aria-label="Dark Theme">
+                        <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+                            aria-label="Dark Theme Icon">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -96,26 +96,27 @@
                                     d="M11.0174 2.80157C6.37072 3.29221 2.75 7.22328 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C16.7767 21.25 20.7078 17.6293 21.1984 12.9826C19.8717 14.6669 17.8126 15.75 15.5 15.75C11.4959 15.75 8.25 12.5041 8.25 8.5C8.25 6.18738 9.33315 4.1283 11.0174 2.80157ZM1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C12.7166 1.25 13.0754 1.82126 13.1368 2.27627C13.196 2.71398 13.0342 3.27065 12.531 3.57467C10.8627 4.5828 9.75 6.41182 9.75 8.5C9.75 11.6756 12.3244 14.25 15.5 14.25C17.5882 14.25 19.4172 13.1373 20.4253 11.469C20.7293 10.9658 21.286 10.804 21.7237 10.8632C22.1787 10.9246 22.75 11.2834 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12Z"
                                     fill="var(--theme-icon-color)"></path>
                             </g>
-                        </svg></label>
+                        </svg>
+                    </label>
 
-                    <div class="glider"></div>
+                    <div class="glider" aria-hidden="true"></div>
                 </div>
 
                 <!-- OVERLAY -->
-                <input type="checkbox" id="toggle-slider">
-                <label for="toggle-slider" id="overlay"></label>
+                <input type="checkbox" id="toggle-slider" aria-hidden="true">
+                <label for="toggle-slider" id="overlay" aria-label="Close navigation menu"></label>
                 <!-- OPEN BUTTON -->
-                <label for="toggle-slider" id="toggle-btn-open">
-                    <svg width="5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <label for="toggle-slider" id="toggle-btn-open" role="button" aria-expanded="false"
+                    aria-controls="navId" aria-label="Open navigation menu">
+                    <svg width="5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-label="Menu icon">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
                             <path d="M4 7L7 7M20 7L11 7" stroke="var(--heading-color)" stroke-width="1.5"
-                                stroke-linecap="round">
-                            </path>
+                                stroke-linecap="round"></path>
                             <path d="M20 17H17M4 17L13 17" stroke="var(--heading-color)" stroke-width="1.5"
-                                stroke-linecap="round">
-                            </path>
+                                stroke-linecap="round"></path>
                             <path d="M4 12H7L20 12" stroke="var(--heading-color)" stroke-width="1.5"
                                 stroke-linecap="round"></path>
                         </g>
@@ -124,9 +125,10 @@
 
                 <div class="slider">
                     <!-- CLOSE BUTTON -->
-                    <label for="toggle-slider" id="toggle-btn-close">
+                    <label for="toggle-slider" id="toggle-btn-close" role="button" aria-expanded="true"
+                        aria-controls="navId" aria-label="Close navigation menu">
                         <svg width="5rem" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3"
-                            stroke="var(--heading-color)" fill="none">
+                            stroke="var(--heading-color)" fill="none" role="img" aria-label="Close icon">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -139,26 +141,25 @@
                         </svg>
                     </label>
 
-                    <ul class="links" id="navId">
-                        <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#plan">Product</a></li>
-                        <li><a href="#benefit-plan">FAQ</a></li>
-                        <li><a href="#feature">Blog</a></li>
-                        <li><a href="#testimonial">About Us</a></li>
+                    <ul class="links" id="navId" role="menu" aria-label="Primary navigation">
+                        <li><a href="#" class="active" role="menuitem" aria-current="page">Home</a></li>
+                        <li><a href="#plan" role="menuitem">Product</a></li>
+                        <li><a href="#benefit-plan" role="menuitem">FAQ</a></li>
+                        <li><a href="#feature" role="menuitem">Blog</a></li>
+                        <li><a href="#testimonial" role="menuitem">About Us</a></li>
                     </ul>
 
                     <!-- optional (removeable) -->
-                    <div class="action">
-                        <a href="#">Login</a>
-                        <button type="button" class="btn-small">Sign up</button>
+                    <div class="action" role="group" aria-label="User actions">
+                        <a href="#" aria-label="Login">Login</a>
+                        <button type="button" class="btn-small" aria-label="Sign up">Sign up</button>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-
-    <main data-bs-spy="scroll" data-bs-target="#navId" data-bs-smooth-scroll="true">
+    <main data-bs-spy="scroll" data-bs-target="#navId" data-bs-smooth-scroll="true" role="main">
         <!-- * =================================== -->
         <!-- * HERO CONTENT -->
         <!-- * =================================== -->
@@ -166,7 +167,8 @@
             <div class="container grid">
                 <div class="text">
                     <h1>We’re here to Increase your Productivity</h1>
-                    <svg class="mt-12" xmlns="http://www.w3.org/2000/svg" width="487" viewBox="0 0 487 34" fill="none">
+                    <svg class="mt-12" xmlns="http://www.w3.org/2000/svg" width="487" viewBox="0 0 487 34" fill="none"
+                        role="presentation" aria-hidden="true">
                         <path d="M4 30C73.6307 10.3798 266.914 -17.0885 483 30" stroke="#54BD95" stroke-width="8"
                             stroke-linecap="round" />
                     </svg>
@@ -179,7 +181,7 @@
                         <button type="button" class="btn-medium">Try free trial</button>
                         <div class="video-button">
                             <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Play video icon">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M17 1.16675C25.7432 1.16675 32.8333 8.25533 32.8333 17.0001C32.8333 25.7448 25.7432 32.8334 17 32.8334C8.25524 32.8334 1.16666 25.7448 1.16666 17.0001C1.16666 8.25533 8.25524 1.16675 17 1.16675Z"
                                     stroke="var(--heading-color)" stroke-width="1.5" stroke-linecap="round"
@@ -189,22 +191,24 @@
                                     stroke="var(--heading-color)" stroke-width="1.5" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
-                            <a href="#" class="link active">View Demo</a>
+                            <a href="#" class="link active" aria-label="View Demo video">View Demo</a>
                         </div>
                     </div>
                 </div>
                 <div class="image">
-                    <img loading="lazy" src="images/hero-image-main.webp" width="700" alt="hero image">
+                    <img loading="lazy" src="images/hero-image-main.webp" width="700"
+                        alt="A user working on a laptop with Biccas dashboard.">
                 </div>
             </div>
             <div class="container mt-40">
                 <h3>More than 25,000 teams use Collabs</h3>
-                <div class="logos  mt-20">
-                    <img loading="lazy" src="images/unsplash-logo.webp" alt="unsplash logo" width="180">
-                    <img loading="lazy" src="images/notion-logo.webp" alt="notion logo" width="145">
-                    <img loading="lazy" src="images/intercom-logo.webp" alt="intercom logo" width="201">
-                    <img loading="lazy" src="images/descript-logo.webp" alt="descript logo" width="154">
-                    <img loading="lazy" src="images/grammarly-logo.webp" alt="grammarly logo" width="196">
+                <div class="logos  mt-20" role="list" aria-label="Partner logos">
+                    <img loading="lazy" src="images/unsplash-logo.webp" alt="Unsplash logo" width="180" role="listitem">
+                    <img loading="lazy" src="images/notion-logo.webp" alt="Notion logo" width="145" role="listitem">
+                    <img loading="lazy" src="images/intercom-logo.webp" alt="Intercom logo" width="201" role="listitem">
+                    <img loading="lazy" src="images/descript-logo.webp" alt="Descript logo" width="154" role="listitem">
+                    <img loading="lazy" src="images/grammarly-logo.webp" alt="Grammarly logo" width="196"
+                        role="listitem">
                 </div>
             </div>
         </section>
@@ -224,7 +228,8 @@
                     <div class="ratings mt-25">
                         <div class="item">
                             <div class="star">
-                                <img loading="lazy" src="images/svg/start-icons-full.svg" width="142" alt="star full">
+                                <img loading="lazy" src="images/svg/start-icons-full.svg" width="142"
+                                    alt="4.9 out of 5 stars.">
                             </div>
                             <p class="mt-07"><b class="text-black">4.9</b> / 5 rating</p>
                             <p><strong>databricks</strong></p>
@@ -233,7 +238,7 @@
                         <div class="item">
                             <div class="star">
                                 <img loading="lazy" src="images/svg/start-icons-not-full.svg" width="142"
-                                    alt="star not full">
+                                    alt="4.8 out of 5 stars.">
                             </div>
                             <p class="mt-07"><b class="text-black">4.8</b> / 5 rating</p>
                             <p><strong>Chainalysis</strong></p>
@@ -242,7 +247,7 @@
                 </div>
                 <div class="content">
                     <div class="item">
-                        <img loading="lazy" src="images/svg/activity-icon.svg" alt="activity-icon">
+                        <img loading="lazy" src="images/svg/activity-icon.svg" alt="Activity icon.">
                         <div class="text">
                             <h5>Publishing</h5>
                             <p class="mt-04">Plan, collaborate, and publishing your contetn that drivees meaningful
@@ -251,14 +256,14 @@
                         </div>
                     </div>
                     <div class="item mt-12">
-                        <img loading="lazy" src="images/svg/pie-chart-icon.svg" alt="chart-icon">
+                        <img loading="lazy" src="images/svg/pie-chart-icon.svg" alt="Pie chart icon.">
                         <div class="text">
                             <h5>Analytics</h5>
                             <p class="mt-04">Analyze your performance and create goegeous report</p>
                         </div>
                     </div>
                     <div class="item mt-12">
-                        <img loading="lazy" src="images/svg/command-icon.svg" alt="command-icon">
+                        <img loading="lazy" src="images/svg/command-icon.svg" alt="Command icon.">
                         <div class="text">
                             <h5>Engagement</h5>
                             <p class="mt-04">Quiuckly navigate you anda engage with your adience</p>
@@ -280,21 +285,24 @@
                 <div class="content mt-36">
                     <!-- ITEM 1 -->
                     <div class="item">
-                        <img loading="lazy" src="images/collaboration.webp" width="364" alt="collaboration">
+                        <img loading="lazy" src="images/collaboration.webp" width="364"
+                            alt="Three colleagues collaborating at a table.">
                         <h4 class="mt-12">Collboration Teams</h4>
                         <p class="mt-08">Here you can handle projects together with team virtually</p>
                     </div>
 
                     <!-- ITEM 2 -->
                     <div class="item">
-                        <img loading="lazy" src="images/cloud.webp" width="364" alt="cloud">
+                        <img loading="lazy" src="images/cloud.webp" width="364"
+                            alt="Cloud storage dashboard illustration.">
                         <h4 class="mt-12">Cloud Storage</h4>
                         <p class="mt-08">No nedd to worry about storage because we provide storage up to 2 TB</p>
                     </div>
 
                     <!-- ITEM 3 -->
                     <div class="item">
-                        <img loading="lazy" src="images/analytics.webp" width="364" alt="analytics">
+                        <img loading="lazy" src="images/analytics.webp" width="364"
+                            alt="Analytics dashboard with bar chart.">
                         <h4 class="mt-12">Daily Analytics</h4>
                         <p class="mt-08">We always provide useful informatin to make it easier for you every day</p>
                     </div>
@@ -322,7 +330,7 @@
                     </ul>
                 </div>
                 <div class="image">
-                    <img loading="lazy" src="images/right-side.webp" width="643" alt="laptop">
+                    <img loading="lazy" src="images/right-side.webp" width="643" alt="Laptop showing Biccas dashboard.">
                 </div>
             </div>
 
@@ -335,22 +343,25 @@
                 <div class="title">
                     <h2>Choose Plan <br> That’s Right For You</h2>
                     <p class="mt-15">Choose plan that works best for you, feel free to contact us</p>
-                    <div class="toggle-container yearly mt-15" id="toggle">
-                        <div class="glider"></div>
-                        <button class="toggle-btn" id="monthly">Bil Monthly</button>
-                        <button class="toggle-btn active" id="yearly">Bil Yearly</button>
+                    <div class="toggle-container yearly mt-15" id="toggle" role="tablist"
+                        aria-label="Billing frequency">
+                        <div class="glider" aria-hidden="true"></div>
+                        <button class="toggle-btn" id="monthly" aria-pressed="false" role="tab"
+                            aria-controls="plan-list">Bil Monthly</button>
+                        <button class="toggle-btn active" id="yearly" aria-pressed="true" role="tab"
+                            aria-controls="plan-list">Bil Yearly</button>
                     </div>
                 </div>
 
                 <!-- --------------------------------- -->
                 <!-- CONTENT -->
-                <div class="content mt-25">
+                <div class="content mt-25" id="plan-list" role="region" aria-label="Pricing plans">
                     <!-- FREE -->
-                    <div class="plan-item">
-                        <h4>Free</h4>
+                    <div class="plan-item" aria-labelledby="free-plan-heading">
+                        <h4 id="free-plan-heading">Free</h4>
                         <p class="mt-04">Have a go and test your <br> superpowers</p>
-                        <h2 class="mt-06">
-                            <p>$</p> 0
+                        <h2 class="mt-06" aria-label="Zero dollars">
+                            <p aria-hidden="true">$</p> 0
                         </h2>
                         <div class="box mt-12">
                             <ul class="list">
@@ -366,11 +377,11 @@
                     </div>
 
                     <!-- PRO -->
-                    <div class="plan-item pro">
-                        <h4 class="text-white">Pro</h4>
+                    <div class="plan-item pro" aria-labelledby="pro-plan-heading">
+                        <h4 class="text-white" id="pro-plan-heading">Pro</h4>
                         <p class="text-white mt-04">Experiment the power <br> of infinite possibilities</p>
-                        <h2 class="text-white mt-06">
-                            <p class="text-white">$</p> 8
+                        <h2 class="text-white mt-06" aria-label="Eight dollars">
+                            <p class="text-white" aria-hidden="true">$</p> 8
                         </h2>
 
                         <div class="box mt-12">
@@ -387,11 +398,11 @@
                     </div>
 
                     <!-- BUSINESS -->
-                    <div class="plan-item business">
-                        <h4>Business</h4>
+                    <div class="plan-item business" aria-labelledby="business-plan-heading">
+                        <h4 id="business-plan-heading">Business</h4>
                         <p class="mt-04 ">Unveil new superpowers <br> and join the Design League</p>
-                        <h2 class="mt-06">
-                            <p>$</p> 16
+                        <h2 class="mt-06" aria-label="Sixteen dollars">
+                            <p aria-hidden="true">$</p> 16
                         </h2>
                         <div class="box mt-12">
                             <ul class="list">
@@ -425,7 +436,7 @@
                         planet</p>
 
                     <svg class="mt-16" xmlns="http://www.w3.org/2000/svg" width="45" height="38" viewBox="0 0 45 38"
-                        fill="none">
+                        fill="none" role="presentation" aria-hidden="true">
                         <path d="M11.5 0H21.5L14.5 38H0L11.5 0Z" fill="#D9D9D9" />
                         <path d="M35 0H45L38 38H23.5L35 0Z" fill="#D9D9D9" />
                     </svg>
@@ -437,33 +448,34 @@
                     </p>
                     <p class="mt-12">_ Aria Zinanrio</p>
 
-                    <div class="avaters mt-16">
-                        <img loading="lazy" src="images/svg/avater1.svg" alt="avater1">
-                        <img loading="lazy" src="images/svg/avater2.svg" alt="avater2">
-                        <img loading="lazy" src="images/svg/avater3.svg" alt="avater3">
-                        <img loading="lazy" src="images/svg/avater4.svg" alt="avater4">
-                        <img loading="lazy" src="images/svg/play-icon.svg" alt="play icon">
+                    <div class="avaters mt-16" role="list" aria-label="Testimonial avatars">
+                        <img loading="lazy" src="images/svg/avater1.svg" alt="User avatar 1" role="listitem">
+                        <img loading="lazy" src="images/svg/avater2.svg" alt="User avatar 2" role="listitem">
+                        <img loading="lazy" src="images/svg/avater3.svg" alt="User avatar 3" role="listitem">
+                        <img loading="lazy" src="images/svg/avater4.svg" alt="User avatar 4" role="listitem">
+                        <img loading="lazy" src="images/svg/play-icon.svg" alt="Play testimonial video" role="listitem">
                     </div>
                 </div>
 
                 <!-- ------------------------------- -->
                 <!-- GET STARTED FORM -->
 
-                <form action="#" method="post">
+                <form action="#" method="post" aria-label="Contact form">
                     <div class="image">
-                        <img loading="lazy" src="images/svg/get-started.svg" width="73" alt="get-started">
+                        <img loading="lazy" src="images/svg/get-started.svg" width="73" alt="Get started icon">
                     </div>
                     <h4 class="text-white">Get Started</h4>
                     <label for="email">
                         <p class="text-white">Email</p>
                     </label>
-                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                    <input type="email" name="email" id="email" placeholder="Enter your email"
+                        aria-label="Email address">
                     <label for="mes">
                         <p class="text-white">Message</p>
                     </label>
-                    <textarea name="Message" id="mes" placeholder="What are you say ?"></textarea>
-                    <button class="btn-large" type="button">Request Demo</button>
-                    <a class="trial">or Start Free Trial</a>
+                    <textarea name="Message" id="mes" placeholder="What are you say ?" aria-label="Message"></textarea>
+                    <button class="btn-large" type="button" aria-label="Request demo">Request Demo</button>
+                    <a class="trial" href="#" aria-label="Start free trial">or Start Free Trial</a>
                 </form>
             </div>
         </section>
@@ -473,19 +485,22 @@
     <!-- * FOOTER -->
     <!-- * ====================================== -->
 
-    <footer>
+    <footer role="contentinfo" aria-label="Footer">
         <div class="container">
             <div class="logo">
                 <h2>Biccas</h2>
                 <p class="mt-10">Get started noew try our product</p>
-                <form class="mt-10" action="#" method="post">
-                    <input type="email" placeholder="Enter your email here">
-                    <button type="button" class="btn-small"><img loading="lazy" src="images/svg/arrow-right.svg"
-                            alt="arrow right"></button>
+                <form class="mt-10" action="#" method="post" aria-label="Subscribe to newsletter">
+                    <label for="email-subscribe" class="visually-hidden">Enter your email here</label>
+                    <input type="email" id="email-subscribe" placeholder="Enter your email here"
+                        aria-label="Subscribe email">
+                    <button type="button" class="btn-small" aria-label="Subscribe">
+                        <img loading="lazy" src="images/svg/arrow-right.svg" alt="Arrow right">
+                    </button>
                 </form>
             </div>
 
-            <div class="content">
+            <div class="content" role="navigation" aria-label="Footer navigation">
                 <div class="support">
                     <p class="text-white">Support</p>
                     <a href="#" class="mt-05">Help centre</a>
@@ -511,7 +526,7 @@
         </div>
 
         <div class="container mt-25">
-            <p class="text-white">© 2025 Biccas Inc. <span class="dev">Developed by SHADMAN
+            <p class="text-white">© 2025 <span class="dev">Developed by SHADMAN
                     JAHIN</span></p>
             <p class="text-white">Terms and Condtions &CenterDot; Privacy Policy</p>
         </div>
