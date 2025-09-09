@@ -296,10 +296,12 @@
     --theme-icon-color: var(--heading-color);
     --theme-active-icon-color: #fff;
 
+
     /* ! LOADER */
     --loader-bg: var(--body-bg);
     --loader-color: light-dark(rgba(25, 26, 21, 0.5), rgba(255, 255, 255, .5));
     --loader-color-active: light-dark(#191A15, #fff);
+
 
     /* ! SCROLLBAR */
     /* to adjust width go to app.js (loader) */
@@ -643,4 +645,34 @@ ul.list>li::before {
 ::-webkit-scrollbar-thumb {
     background: var(--scrollbar-bg);
     border-radius: 4rem;
+}
+
+
+
+/* * ================================= */
+/* * CURSOR */
+/* * ================================= */
+
+* {
+    cursor: none !important;
+}
+
+
+#cursor .circle {
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: 2.4rem;
+    background-color: var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999;
+    /* so that it stays on top of all other elements */
+}
+
+@media (pointer: coarse) {
+    #cursor {
+        display: none;
+    }
 }
