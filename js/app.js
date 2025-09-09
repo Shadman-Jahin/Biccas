@@ -15,7 +15,6 @@ const lenis = new Lenis({
     autoRaf: true, // Automatically calls lenis.raf(time) using requestAnimationFrame
 });
 
-
 // * =============
 // * LOADER
 // * =============
@@ -32,8 +31,76 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         document.documentElement.style.setProperty("--scrollbar-width", ".5rem");
         document.querySelector(".loader")?.remove();
+
+        // ✅ CORRECT: Run the animation function ONLY after the loader is gone
+        runAfterPageLoad();
     }, remainingTime);
 });
+
+
+// * ============================================
+// * AOS INITIALIZE AND TEXT ANIMATION 
+// * ============================================
+
+const runAfterPageLoad = () => {
+    Splitting();
+    AOS.init({ once: false, duration: 1000, offset: 250 });
+
+    const elements = document.querySelectorAll('[data-splitting][data-aos][data-animate-class]');
+
+    elements.forEach(parent => {
+        const chars = parent.querySelectorAll('.char,.word');
+        const animateClass = parent.dataset.animateClass.trim().split(" ");
+        const speed = Number(parent.dataset.customSpeed) || 0.05;
+        let isAnimated = false;
+
+        const runAnimation = () => {
+            chars.forEach((char, i) => {
+                char.classList.remove("animate__animated", ...animateClass);
+                void char.offsetWidth;
+                char.classList.add("animate__animated", ...animateClass);
+                char.style.animationDelay = `${i * speed}s`;
+            });
+            isAnimated = true;
+        };
+
+        const resetAnimation = () => {
+            chars.forEach(char => {
+                char.classList.remove("animate__animated", ...animateClass);
+                char.style.animationDelay = '0s';
+            });
+            isAnimated = false;
+        };
+
+        const observer = new MutationObserver(() => {
+            if (parent.classList.contains('aos-animate')) {
+                if (!isAnimated) runAnimation();
+            } else {
+                resetAnimation();
+            }
+        });
+
+        observer.observe(parent, {
+            attributes: true,
+            attributeFilter: ['class'],
+        });
+
+        // ✅ This check is still useful for elements that are in the viewport from the start,
+        // but now it runs at the right time.
+        if (parent.classList.contains('aos-animate')) {
+            runAnimation();
+        }
+    });
+};
+
+
+
+
+
+
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

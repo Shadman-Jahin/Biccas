@@ -1,3 +1,44 @@
+/* * ========================================= */
+/* * ANIMATIONS */
+/* * ========================================= */
+
+/* ---------------------------------- */
+/* FILL LEFT TO RIGHT */
+
+.anim-fill {
+    clip-path: inset(0% 100% 0% 0%);
+    animation: fill-left-to-right 2s linear forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fill-left-to-right {
+    100% {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+
+
+/* ---------------------------------- */
+/* FADE DOWN */
+
+.anim-fade-down {
+    translate: 0 -50%;
+    opacity: 0;
+    animation: flip-down 1s ease forwards;
+}
+
+@keyframes flip-down {
+    100% {
+        translate: 0 0;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
 /* * ===================================== */
 /* *  HEADER */
 /* * ===================================== */
