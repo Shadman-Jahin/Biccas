@@ -315,6 +315,12 @@
     box-sizing: border-box;
 }
 
+header,
+footer,
+main {
+    overflow: hidden;
+}
+
 body {
     background: var(--body-bg);
 }
@@ -346,7 +352,7 @@ html {
 
 h1 {
     color: var(--heading-color);
-    font: normal 700 8rem/9rem "Inter", sans-serif;
+    font: normal 700 7.5rem/9rem "Inter", sans-serif;
 }
 
 h2 {
@@ -448,7 +454,7 @@ a:hover {
 .btn-large-white {
     border: .2rem solid transparent;
     transition: .3s;
-    min-width: 26rem;
+    min-width: 20rem;
     border-radius: 2rem;
     padding: 2rem;
     box-shadow: 0 4px 9px 0 var(--shadow-color);
@@ -493,7 +499,7 @@ ul {
 ul.list>li {
     color: var(--heading-color);
     font: normal 500 1.8rem/3rem "Inter", sans-serif;
-    text-indent: 5.2rem;
+    padding-left: 5.2rem;
     position: relative;
     text-align: left;
 }
