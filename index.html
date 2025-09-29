@@ -70,23 +70,6 @@
         <div class="circle"></div>
     </div>
 
-    <!-- COOKIES -->
-    <div id="cookies">
-        <div class="offcanvas offcanvas-bottom" data-bs-backdrop="static" tabindex="-1" id="Id2"
-            aria-labelledby="staticBackdropLabel" role="dialog" aria-modal="true">
-            <div class="offcanvas-header">
-                <h3 class="offcanvas-title" id="staticBackdropLabel">
-                    COOKIES
-                </h3>
-                <a type="button" class="ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"
-                    role="button">&Cross;</a>
-            </div>
-            <div class="offcanvas-body">
-                <p>This website is developed by <span>SHADMAN JAHIN</span></p>
-                <button class="btn-large mt-05" data-bs-dismiss="offcanvas">UNDERSTOOD</button>
-            </div>
-        </div>
-    </div>
 
     <!-- HEADER -->
     <header>
@@ -268,20 +251,15 @@
                 </div>
             </div>
             <div class="container mt-40">
-                <h3 data-splitting data-aos="fade-down" data-animate-class="animate__bounceInLeft"
-                    data-custom-speed=".02">More than
+                <h3 data-aos="fade-down">More than
                     25,000 teams use Collabs</h3>
-                <div class="logos  mt-20" role="list" aria-label="Partner logos">
-                    <img data-aos="fade-down" data-aos-delay="0" loading="lazy" src="images/unsplash-logo.webp"
-                        alt="Unsplash logo" width="180" role="listitem">
-                    <img data-aos="fade-down" data-aos-delay="200" loading="lazy" src="images/notion-logo.webp"
-                        alt="Notion logo" width="145" role="listitem">
-                    <img data-aos="fade-down" data-aos-delay="400" loading="lazy" src="images/intercom-logo.webp"
-                        alt="Intercom logo" width="201" role="listitem">
-                    <img data-aos="fade-down" data-aos-delay="600" loading="lazy" src="images/descript-logo.webp"
-                        alt="Descript logo" width="154" role="listitem">
-                    <img data-aos="fade-down" data-aos-delay="800" loading="lazy" src="images/grammarly-logo.webp"
-                        alt="Grammarly logo" width="196" role="listitem">
+                <div class="logos  mt-20" role="list" aria-label="Partner logos" data-aos="flip-down">
+                    <img loading="lazy" src="images/unsplash-logo.webp" alt="Unsplash logo" width="180" role="listitem">
+                    <img loading="lazy" src="images/notion-logo.webp" alt="Notion logo" width="145" role="listitem">
+                    <img loading="lazy" src="images/intercom-logo.webp" alt="Intercom logo" width="201" role="listitem">
+                    <img loading="lazy" src="images/descript-logo.webp" alt="Descript logo" width="154" role="listitem">
+                    <img loading="lazy" src="images/grammarly-logo.webp" alt="Grammarly logo" width="196"
+                        role="listitem">
                 </div>
             </div>
         </section>
@@ -293,19 +271,19 @@
         <section id="support">
             <div class="container grid">
                 <div class="title">
-                    <h2 data-splitting="words" data-custom-speed=".1" data-aos="fade-down"
-                        data-animate-class="animate__rollIn">
+                    <h2 data-splitting="words" data-custom-speed=".1" data-aos="fade-in"
+                        data-animate-class="animate__rollIn" data-aos-anchor="#support .title">
                         How we support
                         our partners
                         all over
                         the world</h2>
-                    <p data-splitting data-custom-speed=".015" data-aos="fade-down"
-                        data-animate-class="animate__flipInX" class="mt-12">
+                    <p data-splitting data-custom-speed=".015" data-aos="fade-in" data-animate-class="animate__flipInX"
+                        data-aos-anchor="#support .title" class="mt-12">
                         SaaS become a common delivery model for many business application, including office software,
                         messaging software, payroll processing software, DBMS software, management software
                     </p>
                     <div class="ratings mt-25">
-                        <div class="item" data-aos="fade-up">
+                        <div class="item" data-aos="fade-up" data-aos-anchor="#support .title">
                             <div class="star">
                                 <img loading="lazy" src="images/svg/start-icons-full.svg" width="142"
                                     alt="4.9 out of 5 stars.">
@@ -314,7 +292,7 @@
                             <p><strong>databricks</strong></p>
                         </div>
 
-                        <div class="item" data-aos="fade-up">
+                        <div class="item" data-aos="fade-up" data-aos-anchor="#support .title">
                             <div class="star">
                                 <img loading="lazy" src="images/svg/start-icons-not-full.svg" width="142"
                                     alt="4.8 out of 5 stars.">
@@ -324,8 +302,10 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="content">
-                    <div class="item" data-aos="fade-right">
+                    <div class="item" data-aos="fade-right" data-aos-anchor="#support .content">
                         <img loading="lazy" src="images/svg/activity-icon.svg" alt="Activity icon.">
                         <div class="text">
                             <h5>Publishing</h5>
@@ -334,14 +314,16 @@
                                 growth for your barnd</p>
                         </div>
                     </div>
-                    <div class="item mt-12" data-aos="fade-right" data-aos-delay="200">
+                    <div class="item mt-12" data-aos="fade-right" data-aos-anchor="#support .content"
+                        data-aos-delay="200">
                         <img loading="lazy" src="images/svg/pie-chart-icon.svg" alt="Pie chart icon.">
                         <div class="text">
                             <h5>Analytics</h5>
                             <p class="mt-04">Analyze your performance and create goegeous report</p>
                         </div>
                     </div>
-                    <div class="item mt-12" data-aos="fade-right" data-aos-delay="400">
+                    <div class="item mt-12" data-aos="fade-right" data-aos-anchor="#support .content"
+                        data-aos-delay="400">
                         <img loading="lazy" src="images/svg/command-icon.svg" alt="Command icon.">
                         <div class="text">
                             <h5>Engagement</h5>
@@ -521,38 +503,38 @@
 
                 <div class="text">
                     <h2 class="text-white" data-splitting="words" data-custom-speed=".2" data-aos="fade-down"
-                        data-animate-class="animate__zoomInDown">People are Saying About DoWhith</h2>
+                        data-animate-class="animate__zoomInDown" data-aos-anchor="#testimonial .text">People are Saying
+                        About DoWhith</h2>
                     <p class="mt-08" data-splitting data-custom-speed=".02" data-aos="fade-down"
-                        data-animate-class="animate__flipInX">Everything you need to accept to payment and grow your
+                        data-animate-class="animate__flipInX" data-aos-anchor="#testimonial .text">Everything you need
+                        to accept to payment and grow your
                         money of manage anywhere on
                         planet</p>
 
-                    <svg data-aos="fade-in" data-aos-offset="300" class="mt-16" xmlns="http://www.w3.org/2000/svg"
-                        width="45" height="38" viewBox="0 0 45 38" fill="none" role="presentation" aria-hidden="true">
+                    <svg data-aos="fade-in" data-aos-anchor="#testimonial .text" data-aos-offset="300" class="mt-16"
+                        xmlns="http://www.w3.org/2000/svg" width="45" height="38" viewBox="0 0 45 38" fill="none"
+                        role="presentation" aria-hidden="true">
                         <path d="M11.5 0H21.5L14.5 38H0L11.5 0Z" fill="#D9D9D9" />
                         <path d="M35 0H45L38 38H23.5L35 0Z" fill="#D9D9D9" />
                     </svg>
 
-                    <p class="mt-16" data-splitting data-custom-speed=".02" data-aos="fade-down"
-                        data-animate-class="animate__flipInX">
+                    <p class="mt-16" data-splitting data-aos-anchor="#testimonial .text" data-custom-speed=".02"
+                        data-aos="fade-down" data-animate-class="animate__flipInX">
                         I am very helped by this E-wallet application , my days are
                         very easy to use this application and its very helpful in
                         my life , even I can pay a short time 😍
                     </p>
-                    <p class="mt-12" data-splitting data-custom-speed=".02" data-aos="fade-down"
-                        data-animate-class="animate__flipInX" data-aos-offset="100">_ Aria Zinanrio</p>
+                    <p class="mt-12" data-splitting data-aos-anchor="#testimonial .text" data-custom-speed=".02"
+                        data-aos="fade-down" data-animate-class="animate__flipInX" data-aos-offset="100">_ Aria Zinanrio
+                    </p>
 
-                    <div class="avaters mt-16" role="list" aria-label="Testimonial avatars">
-                        <img data-aos="flip-left" data-aos-offset="50" loading="lazy" src="images/avater1.webp"
-                            alt="User avatar 1" role="listitem">
-                        <img data-aos="flip-left" data-aos-delay="200" data-aos-offset="50" loading="lazy"
-                            src="images/avater2.webp" alt="User avatar 2" role="listitem">
-                        <img data-aos="flip-left" data-aos-delay="400" data-aos-offset="50" loading="lazy"
-                            src="images/avater3.webp" alt="User avatar 3" role="listitem">
-                        <img data-aos="flip-left" data-aos-delay="600" data-aos-offset="50" loading="lazy"
-                            src="images/avater4.webp" alt="User avatar 4" role="listitem">
-                        <img data-aos="flip-left" data-aos-delay="800" data-aos-offset="50" loading="lazy"
-                            src="images/svg/play-icon.svg" alt="Play testimonial video" role="listitem">
+                    <div class="avaters mt-16" role="list" aria-label="Testimonial avatars" data-aos="flip-down"
+                        data-aos-anchor="#testimonial .text">
+                        <img loading="lazy" src="images/avater1.webp" alt="User avatar 1" role="listitem">
+                        <img loading="lazy" src="images/avater2.webp" alt="User avatar 2" role="listitem">
+                        <img loading="lazy" src="images/avater3.webp" alt="User avatar 3" role="listitem">
+                        <img loading="lazy" src="images/avater4.webp" alt="User avatar 4" role="listitem">
+                        <img loading="lazy" src="images/svg/play-icon.svg" alt="Play testimonial video" role="listitem">
                     </div>
                 </div>
 
@@ -626,7 +608,7 @@
 
         <div class="container mt-25">
             <p class="text-white">© 2025
-                <span class="dev">Developed by SHADMAN JAHIN</span>
+                Developed by <span class="dev">SHADMAN JAHIN</span>
             </p>
             <p class="text-white">Terms and Condtions &CenterDot; Privacy Policy</p>
         </div>

@@ -1,19 +1,29 @@
-// * ========================================
-// * LENIS INTIALIZATION
-// * ========================================
+// * -------------------------------
+// * LENIS INITIALIZATION 
+// * -------------------------------
 
+// 1. Initialize Lenis with optimized settings
 const lenis = new Lenis({
-    duration: 1.5, // Duration of the smooth scroll animation in seconds
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing function
-    direction: 'vertical', // vertical, horizontal
-    gestureDirection: 'vertical', // vertical, horizontal, both
-    smoothWheel: true, // Enables smooth scrolling for mouse wheel
-    wheelMultiplier: 1.5, // Adjust scroll speed for mouse wheel
-    smoothTouch: false, // Disables smooth scrolling for touch devices (often better for mobile performance)
-    touchMultiplier: 2, // Adjust scroll speed for touch
-    infinite: false, // Enables infinite scroll
-    autoRaf: true, // Automatically calls lenis.raf(time) using requestAnimationFrame
+    lerp: 0.07,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+    autoRaf: false,
 });
+
+
+function raf(time) {
+    lenis.raf(time); // Tell Lenis the current time to calculate the scroll position
+    requestAnimationFrame(raf); // Recursively call itself on the next frame
+}
+requestAnimationFrame(raf);
+
+
 
 // * =============
 // * LOADER
@@ -226,15 +236,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-
-// * ===========================
-// * BROWER COOKIES
-// * ===========================
-
-window.addEventListener("load", () => {
-    const offcanvasElement = document.querySelector("#cookies .offcanvas");
-    const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
-    setTimeout(() => {
-        bsOffcanvas.show();
-    }, 15000);
-})

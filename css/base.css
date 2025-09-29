@@ -558,36 +558,6 @@ ul.list>li::before {
 }
 
 
-/* * ====================== */
-/* * COOKIES (OFFCANVAS) */
-/* * ====================== */
-
-#cookies .offcanvas {
-    background: var(--slider-bg);
-    --bs-offcanvas-height: max(30vh, 30rem);
-    background-image: radial-gradient(circle at 50% 100%,
-            rgba(82, 189, 170, 0.4) 0%,
-            rgba(82, 189, 170, 0.1) 15%,
-            rgba(82, 189, 170, 0.0) 70%,
-            transparent 100%);
-    padding: 0 1rem;
-}
-
-#cookies .offcanvas span {
-    color: light-dark(rgb(0, 163, 95), #7f0);
-    font-weight: 600;
-    font-size: 2rem;
-    font-style: italic;
-    font-weight: 700;
-    display: inline-block;
-    width: 25rem;
-}
-
-#cookies .offcanvas a {
-    font-size: 5rem;
-    color: var(--heading-color);
-}
-
 /* * ======================================== */
 /* * LOADER */
 /* * ======================================== */
