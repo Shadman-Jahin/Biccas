@@ -236,3 +236,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// * ========================
+// * DINAMIC COPYWRITE YEAR
+// * ========================
+
+const copyYear = document.getElementById("copyYear");
+const currentYear = new Date().getFullYear().toString();
+if (copyYear) {
+    copyYear.textContent = currentYear;
+}
